@@ -25,8 +25,6 @@ services:
       - MATOMO_DATABASE_HOST=db
     env_file:
       - ./db.env
-    ports:
-      - 8080:80
 
 volumes:
   db:
