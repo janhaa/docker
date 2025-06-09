@@ -13,6 +13,8 @@ services:
       - MARIADB_DISABLE_UPGRADE_BACKUP=1
     env_file:
       - ./db.env
+    networks:
+      - matomo
 
   app:
     image: matomo
@@ -25,7 +27,12 @@ services:
       - MATOMO_DATABASE_HOST=db
     env_file:
       - ./db.env
+    networks:
+      - matomo
 
 volumes:
   db:
+  matomo:
+
+networks:
   matomo:
